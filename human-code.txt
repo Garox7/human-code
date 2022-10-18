@@ -48,6 +48,8 @@ SE il film o la serie tv ha attori famosi AND regista famoso
     END ELSE
 END IF
 
+... da correggere:
+avrei dovuto dividere le liste in base a sera e non sera.
 
 FINE
         
