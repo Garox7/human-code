@@ -1,0 +1,59 @@
+SCEGLIERE COSA GUARDARE SU NETFLIX
+
+INIZIO
+
+definizione del tempo a disposizione
+    SE NOT sera No time
+    SE è sera < 2 ore
+
+Aprire il catalogo Netflix
+    - Creare una lista "FILM"
+    - Creare una lista "SERIE TV"
+
+SE è film OR serie tv AND parla di business AND sera
+    SE ha durata < 2 ore AND  film
+        - lo aggiungo alla lista "FILM"
+    SE ha durata < 2 ore AND serie tv
+        - lo aggiungo alla lista "SERIE TV"
+    SE ha durata > 2 ore OR non parla di business
+        - lo escludo da qualsiasi lista
+    END IF
+END IF
+
+SE è film o serie tv AND parla di business AND NOT sera 
+    SE è film
+        - aggiungi alla lista "FILM"
+    SE è serie TV
+        - aggiungi alla lista "SERIE TV"
+    SE non parla di busines
+        - escludi da qualsiasi lista
+    END IF
+END IF
+
+Prendi lista "FILM e lista "SERIE TV"
+   - Inserisci gli elementi in una lista "PREFERITI"
+   - selezionare a caso un film/serie tv
+
+SE il film o la serie tv ha attori famosi AND regista famoso
+    - lo guardi
+    - ALTRIMENTI 
+        - elimini da lista PREFERITI
+        - aggiungi a lista ESAMINATI
+        SE lista preferiti è vuota
+            - disdici abbonamento
+        ALTRIMENTI 
+            - Selezioni un altro film dalla lista "preferiti"
+        END IF
+        END ELSE
+    END ELSE
+END IF
+
+
+FINE
+        
+
+
+
+
+
+
