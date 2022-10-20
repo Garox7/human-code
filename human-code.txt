@@ -7,14 +7,16 @@ definizione del tempo a disposizione
     SE è sera < 2 ore
 
 Aprire il catalogo Netflix
-    - Creare una lista "FILM"
-    - Creare una lista "SERIE TV"
+    - Creare una lista "FILM SERA"
+    - Creare una lista "FILM GIORNO"
+    - Creare una lista "SERIE TV SERA"
+    - Creare una lista "SERIE TV GIORNO"
 
 SE è film OR serie tv AND parla di business AND sera
     SE ha durata < 2 ore AND  film
-        - lo aggiungo alla lista "FILM"
+        - lo aggiungo alla lista "FILM SERA"
     SE ha durata < 2 ore AND serie tv
-        - lo aggiungo alla lista "SERIE TV"
+        - lo aggiungo alla lista "SERIE TV SERA"
     SE ha durata > 2 ore OR non parla di business
         - lo escludo da qualsiasi lista
     END IF
@@ -22,34 +24,50 @@ END IF
 
 SE è film o serie tv AND parla di business AND NOT sera 
     SE è film
-        - aggiungi alla lista "FILM"
+        - aggiungi alla lista "FILM GIORNO"
     SE è serie TV
-        - aggiungi alla lista "SERIE TV"
+        - aggiungi alla lista "SERIE TV GIORNO"
     SE non parla di busines
         - escludi da qualsiasi lista
     END IF
 END IF
 
-Prendi lista "FILM e lista "SERIE TV"
-   - Inserisci gli elementi in una lista "PREFERITI"
+Prendi lista "FILM SERA" e lista "SERIE TV SERA"
+   - Inserisci gli elementi in una lista "PREFERITI SERA"
    - selezionare a caso un film/serie tv
+
 
 SE il film o la serie tv ha attori famosi AND regista famoso
     - lo guardi
     - ALTRIMENTI 
-        - elimini da lista PREFERITI
-        - aggiungi a lista ESAMINATI
+        - elimini da lista PREFERITI SERA
+        - aggiungi a lista ESAMINATI SERA
         SE lista preferiti è vuota
             - disdici abbonamento
         ALTRIMENTI 
-            - Selezioni un altro film dalla lista "preferiti"
+            - Selezioni un altro film dalla lista "PREFERITI SERA"
         END IF
         END ELSE
     END ELSE
 END IF
 
-... da correggere:
-avrei dovuto dividere le liste in base a sera e non sera.
+Prendi lista "FILM GIORNO" e lista "SERIE TV GIORNO"
+   - Inserisci gli elementi in una lista "PREFERITI GIORNO"
+   - selezionare a caso un film/serie tv
+
+SE il film o la serie tv ha attori famosi AND regista famoso
+    - lo guardi
+    - ALTRIMENTI 
+        - elimini da lista PREFERITI GIORNO
+        - aggiungi a lista ESAMINATI GIORNO
+        SE lista preferiti è vuota
+            - disdici abbonamento
+        ALTRIMENTI 
+            - Selezioni un altro film dalla lista "PREFERITI GIORNO"
+        END IF
+        END ELSE
+    END ELSE
+END IF
 
 FINE
         
